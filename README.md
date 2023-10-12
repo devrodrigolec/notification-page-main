@@ -1,4 +1,4 @@
-## Proyect on Netlify: (notification-page-main-rodrigo.netlify.app)
+## Proyect on Netlify: [notification-page-main-rodrigo.netlify.app]
 
 # Frontend Mentor - Notifications page
 
