@@ -1,10 +1,23 @@
 import "./style.css";
-import { App } from "./src/notification-page-main/app";
-import { markAllAsRead } from "./src/notification-page-main/uses-cases/mark-all-as-read";
-import { refreshNotificationsCouter } from "./src/notification-page-main/uses-cases/refresh-notifications-counter";
+import {
+  App,
+  markAllAsRead,
+  refreshNotificationsCouter,
+  dataNotifications,
+  notificationsRenderGenerator,
+} from "./src/notification-page-main/index";
+
 const insertComponent = document.querySelector("#app");
 
 App(insertComponent);
+
+const containerNotifications = document.querySelector(
+  "#container-notifications"
+);
+
+for (let data of dataNotifications) {
+  notificationsRenderGenerator(data, containerNotifications);
+}
 
 const unreadNotifications = document.querySelectorAll(".unread");
 const unreadNotificationsCounter = document.querySelector(
