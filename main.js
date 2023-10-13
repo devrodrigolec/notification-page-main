@@ -5,6 +5,7 @@ import {
   refreshNotificationsCouter,
   dataNotifications,
   notificationsRenderGenerator,
+  createDataNotifications,
 } from "./src/notification-page-main/index";
 
 const insertComponent = document.querySelector("#app");
@@ -23,9 +24,14 @@ const unreadNotifications = document.querySelectorAll(".unread");
 const unreadNotificationsCounter = document.querySelector(
   ".notifications-number"
 );
+const totalNotificationsNumber = document.querySelector(
+  ".total-notifications-number"
+);
 const markAsRead = document.querySelector(".as-read");
 
 unreadNotificationsCounter.textContent = unreadNotifications.length;
+totalNotificationsNumber.textContent =
+  createDataNotifications.totalNotifications;
 
 markAsRead.addEventListener("click", () => {
   markAllAsRead(unreadNotifications);

@@ -7,7 +7,7 @@ pusherDataNotifications(
   "Rodrigo Leciñana",
   "create this",
   "notification page main",
-  "today",
+  "Right Now",
   true,
   "Hello, i'm the creator of this notifications page main. Best regards!",
   ""

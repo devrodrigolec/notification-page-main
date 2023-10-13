@@ -31,6 +31,6 @@ export class createDataNotifications {
     this.message = message;
     this.commentedPicture = commentedPicture;
 
-    this.totalNotifications++;
+    createDataNotifications.totalNotifications++;
   }
 }
