@@ -1,11 +1,17 @@
 # Frontend Mentor - Notifications page
 
-Live Proyect: https://notification-page-main-rodrigo.netlify.app
+Live Project: https://notification-page-main-rodrigo.netlify.app
 
 ![Design preview for the Notifications page coding challenge](./design/desktop-preview.jpg)
 
 I got this project from [Frontend Mentor](https://www.frontendmentor.io)
 . While the project asks you to implement certain functionalities, I added some that I thought could be useful to make the code more reusable and dynamic.
+
+I created this project using HTML, CSS, JavaScript, and Vite. If you want to deploy it locally, you need to do the following:
+
+- npm install
+- npm run build
+- npm run dev
 
 These are the project goals:
 
