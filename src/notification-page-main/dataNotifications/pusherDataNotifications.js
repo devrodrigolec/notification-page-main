@@ -2,7 +2,7 @@ import { createDataNotifications } from "../createDataNotifications/createDataNo
 import { dataNotifications } from "./dataNotifications";
 
 /**
- *
+ * This function create a instance of the class createDataNotifications and push it into dataNotifications Array.
  * @param {URL} url
  * @param {String} nameUser
  * @param {String} textContent

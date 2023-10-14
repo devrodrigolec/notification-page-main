@@ -1,57 +1,69 @@
+import { createHTMLTag } from "./createHTMLTag";
+
+/**
+ * This function create a single notifications and render it in the HTML
+ * @param {Object } objectNotifications => {}
+ * @param {ElementHTML} elementHTML
+ */
 export const notificationsRenderGenerator = (
   objectNotifications,
   elementHTML
 ) => {
-  const singleNotification = document.createElement("div");
-  singleNotification.classList.add("single-notification");
+  const singleNotification = createHTMLTag("div", "single-notification");
 
-  const imgContainer = document.createElement("div");
-  imgContainer.classList.add("img-container");
-  const img = document.createElement("img");
+  const imgContainer = createHTMLTag("div", "img-container");
+  const img = createHTMLTag("img", "profile-picture");
   img.setAttribute("src", objectNotifications.url);
   img.setAttribute("alt", "Profile Picture");
-  img.classList.add("profile-picture");
   imgContainer.appendChild(img);
 
-  const textContainer = document.createElement("div");
-  textContainer.classList.add("text-container");
+  const textContainer = createHTMLTag("div", "text-container");
 
-  const textNotification = document.createElement("p");
-  textNotification.classList.add("text-notification");
+  const textNotification = createHTMLTag("p", "text-notification");
   textContainer.appendChild(textNotification);
 
-  const userSpan = document.createElement("span");
-  userSpan.classList.add("user");
-  userSpan.textContent = objectNotifications.nameUser + " ";
-  const textContentSpan = document.createElement("span");
-  textContentSpan.classList.add("text-content");
-  textContentSpan.textContent = objectNotifications.textContent + " ";
+  const userSpan = createHTMLTag(
+    "span",
+    "user",
+    objectNotifications.nameUser + " "
+  );
+
+  const textContentSpan = createHTMLTag(
+    "span",
+    "text-content",
+    objectNotifications.textContent + " "
+  );
 
   textNotification.appendChild(userSpan);
   textNotification.appendChild(textContentSpan);
 
   if (objectNotifications.subject != "") {
-    const subjectSpan = document.createElement("span");
-    subjectSpan.classList.add("subject");
-    subjectSpan.textContent = objectNotifications.subject;
+    const subjectSpan = createHTMLTag(
+      "span",
+      "subject",
+      objectNotifications.subject
+    );
     textNotification.appendChild(subjectSpan);
   }
+
   if (objectNotifications.isNew) {
     singleNotification.classList.add("unread");
-    const ballNewNotificationSpan = document.createElement("span");
-    ballNewNotificationSpan.classList.add("ball-new-notification");
+    const ballNewNotificationSpan = createHTMLTag(
+      "span",
+      "ball-new-notification"
+    );
     textNotification.appendChild(ballNewNotificationSpan);
   }
 
-  const timeSpan = document.createElement("span");
-  timeSpan.classList.add("time");
-  timeSpan.textContent = objectNotifications.time;
+  const timeSpan = createHTMLTag("span", "time", objectNotifications.time);
   textContainer.appendChild(timeSpan);
 
   if (objectNotifications.message != "") {
-    const messageUser = document.createElement("p");
-    messageUser.classList.add("message");
-    messageUser.textContent = objectNotifications.message;
+    const messageUser = createHTMLTag(
+      "p",
+      "message",
+      objectNotifications.message
+    );
     textContainer.appendChild(messageUser);
   }
 
@@ -59,17 +71,17 @@ export const notificationsRenderGenerator = (
   singleNotification.appendChild(textContainer);
 
   if (objectNotifications.commentedPicture != "") {
-    const commentedPicture = document.createElement("div");
-    commentedPicture.classList.add("commented-picture-container");
+    const commentedPicture = createHTMLTag(
+      "div",
+      "commented-picture-container"
+    );
 
-    const imgCommentedPicture = document.createElement("img");
-    imgCommentedPicture.classList.add("commented-picture");
+    const imgCommentedPicture = createHTMLTag("img", "commented-picture");
     imgCommentedPicture.setAttribute(
       "src",
       objectNotifications.commentedPicture
     );
     imgCommentedPicture.setAttribute("alt", "Picture");
-
     commentedPicture.appendChild(imgCommentedPicture);
     singleNotification.appendChild(commentedPicture);
   }
